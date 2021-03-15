@@ -12,5 +12,7 @@ successful_frame, frame = webcam.read()
 # show image in python program
 cv2.imshow('Smile Detection App', frame)
 
+# display, wait until you press a key to close program
+cv2.waitKey
 
 print('successful')
