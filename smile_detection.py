@@ -10,6 +10,10 @@ while True:
     # reading webcam feed
     successful_frame, frame = webcam.read()
 
+    # abort if error
+    if not successful_frame:
+        break
+
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
 
@@ -18,6 +22,6 @@ while True:
 
 # cleanup -> release webcam use, close python windows
 webcam.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows() 
 
 print('successful')
