@@ -1,7 +1,8 @@
 import cv2
 
 # face classifier
-face_classifier = cv2.CascadeClassifier('haarscascade_frontalface_default.xml')
+face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+smile_classifier = cv2.CascadeClassifier('haarcascade_smile.xml')
 
 # webcam feed
 webcam = cv2.VideoCapture(0)
