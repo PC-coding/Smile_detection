@@ -14,6 +14,9 @@ while True:
     if not successful_frame:
         break
 
+    # grayscale conversion
+    grayscale_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
 
