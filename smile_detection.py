@@ -23,6 +23,7 @@ while True:
     # run smile detection within each of the detected faces
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
 
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
