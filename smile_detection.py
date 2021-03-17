@@ -17,6 +17,9 @@ while True:
     # grayscale conversion
     grayscale_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    # face detection
+    face_detection = face_classifier.detectMultiScale(grayscale_frame)
+
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
 
