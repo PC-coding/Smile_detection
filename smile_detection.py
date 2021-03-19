@@ -22,7 +22,9 @@ while True:
     face_detection = face_classifier.detectMultiScale(grayscale_frame)
     
     # smile detection
-    smile_detection = smile_classifier.detectMultiScale(grayscale_frame)
+    smile_detection = smile_classifier.detectMultiScale(grayscale_frame, 
+                                                        scaleFactor=1.7, 
+                                                        minNeighbors=20)
 
     # run smile detection within each of the detected faces
     for (x, y, w, h) in face_detection:
