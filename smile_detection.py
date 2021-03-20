@@ -26,12 +26,12 @@ while True:
                                                         scaleFactor=1.7, 
                                                         minNeighbors=20)
 
-    # run smile detection within each of the detected faces
+    # run face_detection within each of the detected faces
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
     
-    # run smile detection within each of the detected faces
+    # run smile_detection within each of the detected faces
     for (x, y, w, h) in smile_detection:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 100), 4)
