@@ -30,7 +30,9 @@ while True:
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
-    
+        # find all smiles in the detected faces
+        for (a, b, c, d) in detected_faces:
+
     # run smile_detection within each of the detected faces
     for (x, y, w, h) in smile_detection:
         # draw a rectangle around the identified faces
