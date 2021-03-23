@@ -30,13 +30,18 @@ while True:
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
+
+        detected_faces = (x, y, w, h)
+        # grayscale conversion
+        gray_smile = cv2.cvtColor(detected_faces, cv2.COLOR_BGR2GRAY)
+
         # find all smiles in the detected faces
         for (a, b, c, d) in detected_faces:
 
     # run smile_detection within each of the detected faces
     for (x, y, w, h) in smile_detection:
         # draw a rectangle around the identified faces
-        cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 100), 4)
+        cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 4)
 
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
