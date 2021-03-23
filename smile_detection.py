@@ -30,11 +30,14 @@ while True:
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
-
+        
+        # get the subframe
         detected_faces = (x, y, w, h)
+        
         # grayscale conversion
         gray_smile = cv2.cvtColor(detected_faces, cv2.COLOR_BGR2GRAY)
         
+        # detect smiles
         detected_smile = smile_detection.detectMultiScale(gray_smile,
                                                         scalefactor=1.7,
                                                         minNeighbors=20)
