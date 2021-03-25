@@ -31,8 +31,8 @@ while True:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
         
-        # get the subframe
-        detected_faces = (x, y, w, h)
+        # get the subframe (use numpy N-dimensional array slicing)
+        detected_faces = frame[y:y+h, x:x+w]
         
         # grayscale conversion
         gray_smile = cv2.cvtColor(detected_faces, cv2.COLOR_BGR2GRAY)
