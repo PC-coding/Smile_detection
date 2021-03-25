@@ -15,7 +15,7 @@ while True:
     if not successful_frame:
         break
 
-    # grayscale conversion
+    # grayscale conversion, optomizes speed 
     grayscale_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # face detection
@@ -31,7 +31,7 @@ while True:
         # draw a rectangle around the identified faces
         cv2.rectangle(frame, (x, y), (x+w, y+h), (100, 200, 50), 4)
         
-        # get the subframe (use numpy N-dimensional array slicing)
+        # get the sub frame (use numpy N-dimensional array slicing)
         detected_faces = frame[y:y+h, x:x+w]
         
         # grayscale conversion
@@ -52,6 +52,7 @@ while True:
     #     cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 4)
 
     # labeling this face as smiling
+    # will show the word "smiling" underneath the detected smile 
     if len(detected_smile) > 0:
         cv2.putText(frame, 'smiling', (x, y+h+40), fontScale=3,
         fontFace=cv2.FONT_HERSHEY_PLAIN, color=(255, 255, 255))
