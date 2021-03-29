@@ -55,7 +55,7 @@ while True:
         # run eye detection
         for (a, b, c, d) in eye_detection:
             # draw a rectangle around the identified eyes
-            cv2.rectangle(frame, (a, b), (a+b, c+d), (255, 255, 255), 4)
+            cv2.rectangle(eye_detection, (a, b), (a+b, c+d), (255, 255, 255), 4)
 
     # # run smile_detection within each of the detected faces
     # for (x, y, w, h) in smile_detection:
