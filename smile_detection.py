@@ -65,6 +65,12 @@ while True:
         cv2.putText(frame, 'smiling', (x, y+h+40), fontScale=3,
         fontFace=cv2.FONT_HERSHEY_PLAIN, color=(255, 255, 255))
 
+    # labeling the eyes in the detected face
+    # will show the word "eyes" underneath the detected smile 
+    if len(eye_detection) > 0:
+        cv2.putText(frame, 'eyes', (x, y+h+40), fontScale=3,
+        fontFace=cv2.FONT_HERSHEY_PLAIN, color=(255, 255, 255))
+
     # show image in python program
     cv2.imshow('Smile Detection App', frame)
 
