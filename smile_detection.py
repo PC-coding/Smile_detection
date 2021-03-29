@@ -51,7 +51,7 @@ while True:
         # find all smiles in the detected faces
         for (a, b, c, d) in detected_smile:
             # draw a rectangle around the smile
-            cv2.rectangle(frame, (a, b), (a + c + b + d), (50, 50, 200))
+            cv2.rectangle(detected_faces, (a, b), (a + c + b + d), (50, 50, 200))
         # run eye detection
         for (a, b, c, d) in eye_detection:
             # draw a rectangle around the identified eyes
