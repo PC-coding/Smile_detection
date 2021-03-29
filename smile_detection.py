@@ -33,6 +33,7 @@ while True:
     eye_detection = eye_classifier.detectMultiScale(grayscale_frame,
                                                     scaleFactor=1.11,
                                                     minNeighbors=10)
+    
     # run face_detection within each of the detected faces
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
@@ -52,15 +53,11 @@ while True:
         for (a, b, c, d) in detected_smile:
             # draw a rectangle around the smile
             cv2.rectangle(detected_faces, (a, b), (a + c + b + d), (50, 50, 200))
+        
         # run eye detection
         for (a, b, c, d) in eye_detection:
             # draw a rectangle around the identified eyes
-            cv2.rectangle(eye_detection, (a, b), (a+b, c+d), (255, 255, 255), 4)
-
-    # # run smile_detection within each of the detected faces
-    # for (x, y, w, h) in smile_detection:
-    #     # draw a rectangle around the identified faces
-    #     cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 4)
+            cv2.rectangle(detected_faces, (a, b), (a+b, c+d), (255, 255, 255), 4)
 
     # labeling this face as smiling
     # will show the word "smiling" underneath the detected smile 
@@ -79,3 +76,7 @@ webcam.release()
 cv2.destroyAllWindows() 
 
 print('successful')
+    # # run smile_detection within each of the detected faces
+    # for (x, y, w, h) in smile_detection:
+    #     # draw a rectangle around the identified faces
+    #     cv2.rectangle(frame, (x, y), (x+w, y+h), (50, 50, 200), 4)
