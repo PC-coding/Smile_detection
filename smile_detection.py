@@ -28,7 +28,11 @@ while True:
     smile_detection = smile_classifier.detectMultiScale(grayscale_frame, 
                                                         scaleFactor=1.7, 
                                                         minNeighbors=20)
-
+    
+    # eye detection
+    eye_detection = eye_classifier.detectMultiScale(grayscale_frame,
+                                                    scaleFactor=1.11,
+                                                    minNeighbors=10)
     # run face_detection within each of the detected faces
     for (x, y, w, h) in face_detection:
         # draw a rectangle around the identified faces
